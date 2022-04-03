@@ -17,8 +17,12 @@ const controlSeries = async function () {
 
     // Render data
     if (query.length < 1) {
+      seriesView.addTitle("TV Series");
+
       seriesView.render(model.state.series);
     } else {
+      seriesView.addTitle("Here are your TV Series results");
+
       seriesView.render(model.state.search.series);
     }
   } catch (err) {
@@ -27,10 +31,10 @@ const controlSeries = async function () {
 };
 
 const init = function () {
-  // Load results on page without search
+  // Load results on page load
   controlSeries();
 
-  // Load results on page with search
+  // Load results on page from search
   searchView.addHandlerSearch(controlSeries);
 };
 
