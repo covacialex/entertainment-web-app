@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-secondary);
+  color: #fff;
+
+  display: flex;
+  //   padding: 2rem;
+}
+
+:root {
+  // Colors
+  --color-primary: rgb(252, 71, 71);
+  --color-secondary: rgb(16, 20, 30);
+  --color--text-primary: rgb(117, 112, 112);
+
+  --color-neutral: rgb(90, 105, 143);
+  --color-neutral-dark: rgb(22, 29, 47);
+
+  // Filters
+  --filter-hover: invert(45%) sepia(64%) saturate(2058%) hue-rotate(330deg)
+    brightness(97%) contrast(105%);
+  --filter-selected: invert(100%) sepia(96%) saturate(0%) hue-rotate(92deg)
+    brightness(104%) contrast(104%);
+
+  // Font size
+  --font-size-head-L: 3.2rem;
+  --font-size-head-M: 2.4rem;
+  --font-size-head-S: 1.8rem;
+
+  --font-size-M: 1.5rem;
+  --font-size-S: 1.3rem;
+
+  // Font weight
+  --font-weight-M: 500;
+  --font-weight-S: 300;
+
+  // Font family
+  --font-family: "Outfit", sans-serif;
+}

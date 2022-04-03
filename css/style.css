@@ -1,0 +1,388 @@
+.sidenav {
+  background-color: var(--color-neutral-dark);
+  display: flex;
+  justify-content: center;
+  border-radius: 1rem;
+  height: 100vh;
+  width: 10rem;
+  margin: 3.2rem 0 3.2rem 3.2rem;
+}
+.sidenav__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem 1.6rem 3rem 1.6rem;
+}
+.sidenav__links__home {
+  margin-top: 5rem;
+}
+.sidenav__links__home:hover {
+  filter: var(--filter-hover);
+}
+.sidenav__links__movies:hover {
+  filter: var(--filter-hover);
+}
+.sidenav__links__series:hover {
+  filter: var(--filter-hover);
+}
+.sidenav__links__bookmarked:hover {
+  filter: var(--filter-hover);
+}
+.sidenav__links__user {
+  margin-top: auto;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+.sidenav__links__user__image {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  width: 3.8rem;
+  height: 3.8rem;
+}
+
+.search {
+  display: flex;
+  margin-top: 4rem;
+  transform: translateX(-3.2rem);
+}
+.search__button {
+  background-color: var(--color-secondary);
+  border: none;
+  cursor: pointer;
+  transform: translateX(3.2rem);
+}
+.search__bar {
+  width: 100%;
+  height: 4rem;
+  padding-left: 4rem;
+  background-color: var(--color-secondary);
+  border: none;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-S);
+  font-size: var(--font-size-head-M);
+  color: #fff;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  overflow: hidden;
+  margin-left: 3.6rem;
+  width: 100vw;
+}
+
+.trending__title {
+  font-size: var(--font-size-head-L);
+  font-weight: var(--font-weight-S);
+  letter-spacing: -0.05rem;
+  margin-bottom: 2rem;
+}
+.trending__content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3rem;
+  overflow: hidden;
+}
+.trending__content__movie {
+  list-style: none;
+  min-width: 47rem;
+  min-height: 23rem;
+  background-size: cover;
+  border-radius: 1rem;
+  color: #fff;
+  position: relative;
+}
+.trending__content__movie__bookmark {
+  background-color: var(--color-secondary);
+  position: absolute;
+  right: 3rem;
+  top: 2.4rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 50%;
+  cursor: pointer;
+}
+.trending__content__movie__contents {
+  position: absolute;
+  bottom: 2.1rem;
+  left: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.trending__content__movie__contents__info {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-S);
+  font-size: var(--font-size-M);
+  opacity: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0.2rem 0.2rem 0.5rem #000;
+  gap: 0.8rem;
+}
+.trending__content__movie__contents__info__type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.trending__content__movie__contents__info__type__image {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.trending__content__movie__contents__title {
+  font-size: var(--font-size-head-M);
+  font-weight: var(--font-weight-S);
+  text-shadow: 0.2rem 0.2rem 0.5rem #000;
+}
+
+.recommended__title {
+  font-size: var(--font-size-head-L);
+  font-weight: var(--font-weight-S);
+  letter-spacing: -0.05rem;
+  margin-bottom: 2rem;
+}
+.recommended__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 28rem);
+  gap: 3.8rem;
+}
+.recommended__content__movie {
+  position: relative;
+  list-style: none;
+}
+.recommended__content__movie__main {
+  background-image: url("..//assets/thumbnails/the-great-lands/regular/large.jpg");
+  height: 17.4rem;
+  background-size: cover;
+  border-radius: 0.6rem;
+}
+.recommended__content__movie__main__bookmark {
+  background-color: var(--color-secondary);
+  position: absolute;
+  right: 1.8rem;
+  top: 1.4rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 50%;
+  cursor: pointer;
+}
+.recommended__content__movie__contents {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.recommended__content__movie__contents__info {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-S);
+  font-size: var(--font-size-S);
+  opacity: 80%;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.recommended__content__movie__contents__info__type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.recommended__content__movie__contents__info__type__image {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.recommended__content__movie__contents__title {
+  font-size: var(--font-size-head-S);
+  font-weight: var(--font-weight-S);
+}
+
+.movies {
+  overflow: hidden;
+}
+.movies__title {
+  font-size: var(--font-size-head-L);
+  font-weight: var(--font-weight-S);
+  letter-spacing: -0.05rem;
+  margin-bottom: 2rem;
+}
+.movies__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 28rem);
+  gap: 3.8rem;
+}
+.movies__content__movie {
+  position: relative;
+  list-style: none;
+}
+.movies__content__movie__main {
+  background-image: url("../assets/thumbnails/the-great-lands/regular/large.jpg");
+  height: 17.4rem;
+  background-size: cover;
+  border-radius: 0.6rem;
+}
+.movies__content__movie__main__bookmark {
+  background-color: var(--color-secondary);
+  position: absolute;
+  right: 1.8rem;
+  top: 1.4rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 50%;
+  cursor: pointer;
+}
+.movies__content__movie__contents {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.movies__content__movie__contents__info {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-S);
+  font-size: var(--font-size-S);
+  opacity: 80%;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.movies__content__movie__contents__info__type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.movies__content__movie__contents__info__type__image {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.movies__content__movie__contents__title {
+  font-size: var(--font-size-head-S);
+  font-weight: var(--font-weight-S);
+}
+
+.series {
+  overflow: hidden;
+}
+.series__title {
+  font-size: var(--font-size-head-L);
+  font-weight: var(--font-weight-S);
+  letter-spacing: -0.05rem;
+  margin-bottom: 2rem;
+}
+.series__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 28rem);
+  gap: 3.8rem;
+}
+.series__content__movie {
+  position: relative;
+  list-style: none;
+}
+.series__content__movie__main {
+  background-image: url("../assets/thumbnails/the-great-lands/regular/large.jpg");
+  height: 17.4rem;
+  background-size: cover;
+  border-radius: 0.6rem;
+}
+.series__content__movie__main__bookmark {
+  background-color: var(--color-secondary);
+  position: absolute;
+  right: 1.8rem;
+  top: 1.4rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 50%;
+  cursor: pointer;
+}
+.series__content__movie__contents {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.series__content__movie__contents__info {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-S);
+  font-size: var(--font-size-S);
+  opacity: 80%;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.series__content__movie__contents__info__type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.series__content__movie__contents__info__type__image {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.series__content__movie__contents__title {
+  font-size: var(--font-size-head-S);
+  font-weight: var(--font-weight-S);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-secondary);
+  color: #fff;
+  display: flex;
+}
+
+:root {
+  --color-primary: rgb(252, 71, 71);
+  --color-secondary: rgb(16, 20, 30);
+  --color--text-primary: rgb(117, 112, 112);
+  --color-neutral: rgb(90, 105, 143);
+  --color-neutral-dark: rgb(22, 29, 47);
+  --filter-hover: invert(45%) sepia(64%) saturate(2058%) hue-rotate(330deg)
+    brightness(97%) contrast(105%);
+  --filter-selected: invert(100%) sepia(96%) saturate(0%) hue-rotate(92deg)
+    brightness(104%) contrast(104%);
+  --font-size-head-L: 3.2rem;
+  --font-size-head-M: 2.4rem;
+  --font-size-head-S: 1.8rem;
+  --font-size-M: 1.5rem;
+  --font-size-S: 1.3rem;
+  --font-weight-M: 500;
+  --font-weight-S: 300;
+  --font-family: "Outfit", sans-serif;
+}
+
+/*# sourceMappingURL=style.css.map */

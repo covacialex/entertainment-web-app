@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="js/seriesController.js"></script>
+
+    <title>Frontend Mentor | Entertainment web app</title>
+  </head>
+  <body>
+    <nav class="sidenav">
+      <ul class="sidenav__links">
+        <img src="assets/logo.svg" alt="" class="side__links__logo" />
+        <a href="index.html" class="sidenav__links__home">
+          <img
+            src="assets/icon-nav-home.svg"
+            alt="Home icon"
+            class="sidenav__links__trending__image"
+          />
+        </a>
+        <a href="movies.html" class="sidenav__links__movies">
+          <img
+            src="assets/icon-nav-movies.svg"
+            alt="Movies Icon"
+            class="sidenav__links__movies"
+          />
+        </a>
+        <a href="tv-series.html" class="sidenav__links__series">
+          <img
+            src="assets/icon-nav-tv-series.svg"
+            alt="TV Icon"
+            class="sidenav__links__series"
+            style="filter: var(--filter-selected)"
+          />
+        </a>
+        <a href="#" class="sidenav__links__bookmarked">
+          <img
+            src="assets/icon-nav-bookmark.svg"
+            alt="Bookmark icon"
+            class="sidenav__links__bookmarked"
+          />
+        </a>
+        <a href="#" class="sidenav__links__user">
+          <img
+            src="assets/image-avatar.png"
+            alt="User avatar"
+            class="sidenav__links__user__image"
+          />
+        </a>
+      </ul>
+    </nav>
+
+    <main class="main">
+      <form type="submit" class="search">
+        <button class="search__button">
+          <img
+            src="assets/icon-search.svg"
+            alt="Search bar icon"
+            class="search__button__image"
+          />
+        </button>
+        <input
+          type="text"
+          class="search__bar"
+          placeholder="Search for TV Series"
+        />
+      </form>
+
+      <div class="series">
+        <h2 class="series__title">TV Series</h2>
+        <ul class="series__content"></ul>
+      </div>
+    </main>
+  </body>
+</html>

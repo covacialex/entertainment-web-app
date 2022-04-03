@@ -1,0 +1,14 @@
+{
+  "name": "entertainment-web-app",
+  "version": "1.0.0",
+  "description": "FrontEndMentor challenge",
+  "main": "js/index.js",
+  "scripts": {
+    "watch:sass": "sass sass/main.scss css/style.css -w"
+  },
+  "author": "Covaci Alex",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.49.11"
+  }
+}
