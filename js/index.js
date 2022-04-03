@@ -4,7 +4,6 @@ import * as model from "./model.js";
 import recommendedView from "./Views/recommendedView.js";
 import trendingView from "./Views/trendingView.js";
 import searchView from "./Views/searchView.js";
-import homeView from "./Views/homeView.js";
 
 const controlHome = async function () {
   try {
