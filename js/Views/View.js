@@ -44,15 +44,16 @@ export default class View {
     this._parentElement.insertAdjacentHTML("afterbegin", markup);
   }
 
-  getQuery = function () {
-    const query = document.querySelector(".search__bar").value;
-    this._clearInput();
-    return query;
-  };
-  addHandlerSearch(handler) {
-    document.querySelector(".search").addEventListener("submit", function (e) {
-      e.preventDefault();
-      handler();
-    });
+  clearSection() {
+    // Selects list
+    this._parentElement.innerHTML = "";
+
+    // Selects title
+    this._parentElement.previousElementSibling.innerHTML = "";
+  }
+
+  addTitle(title) {
+    // Selects title
+    this._parentElement.previousElementSibling.innerHTML = title;
   }
 }
