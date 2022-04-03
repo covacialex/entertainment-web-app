@@ -3,6 +3,7 @@ import { API_URL } from "./helpers.js";
 
 export const state = {
   search: {
+    results: [],
     series: [],
     movies: [],
   },
@@ -10,89 +11,6 @@ export const state = {
   recommended: [],
   movies: [],
   series: [],
-};
-
-// Get trending with fetch
-export const getTrending = async function () {
-  try {
-    const data = await getJSON(API_URL).then((data) => {
-      const filteredArray = data.filter((num) => {
-        //   Filter results and return only trending
-        return num.isTrending;
-      });
-
-      //   Store results in state.
-      state.trending = filteredArray;
-    });
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-export const searchMovie = async function (movieName) {
-  try {
-    const data = await getJSON(API_URL).then((data) => {
-      const filteredArray = data.filter((num) => {
-        //   Filter results and return only titles which include passed argument from search bar
-        return (
-          num.title.toLowerCase().includes(movieName) && num.category == "Movie"
-        );
-      });
-      console.log(filteredArray);
-      //   Store results in state.
-      state.results = filteredArray;
-    });
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-export const getRecommended = async function () {
-  try {
-    const data = await getJSON(API_URL).then((data) => {
-      //   Filter results and skip trending movies
-      const filteredArray = data.filter((num) => {
-        return num.isTrending == false;
-      });
-
-      //   Store results in state.
-      state.recommended = filteredArray;
-    });
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-export const getMovies = async function () {
-  try {
-    const data = await getJSON(API_URL).then((data) => {
-      //   Filter results and get only movies
-      const filteredArray = data.filter((num) => {
-        return num.category == "Movie";
-      });
-
-      //   Store results in state.
-      state.movies = filteredArray;
-    });
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-export const getSeries = async function (seriesName) {
-  try {
-    const data = await getJSON(API_URL).then((data) => {
-      //   Filter results and get only TV Series
-      const filteredArray = data.filter((num) => {
-        return num.category == "TV Series";
-      });
-
-      //   Store results in state.
-      state.series = filteredArray;
-    });
-  } catch (err) {
-    console.log(err);
-  }
 };
 
 export const searchForSeries = async function (seriesName) {
@@ -132,6 +50,34 @@ export const searchForMovies = async function (movieName) {
       //   Store results in state.
       state.movies = filteredArray;
       state.search.movies = filteredSearchArray;
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const getResults = async function (name) {
+  try {
+    const data = await getJSON(API_URL).then((data) => {
+      const trendingArray = data.filter((num) => {
+        //   Filter results and return only trending
+        return num.isTrending;
+      });
+
+      const recommendedArray = data.filter((num) => {
+        //   Filter results and return only trending
+        return num.isTrending == false;
+      });
+
+      const searchArray = data.filter((num) =>
+        //   Filter results and return only title including passed in value from search bar
+        num.title.toLowerCase().includes(name)
+      );
+
+      //   Store results in state.
+      state.trending = trendingArray;
+      state.recommended = recommendedArray;
+      state.search.results = searchArray;
     });
   } catch (err) {
     console.log(err);
