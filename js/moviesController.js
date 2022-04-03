@@ -17,8 +17,12 @@ const controlMovies = async function () {
 
     // Render data
     if (query.length < 1) {
+      moviesView.addTitle("Movies");
+
       moviesView.render(model.state.movies);
     } else {
+      moviesView.addTitle("Here are your Movie results");
+
       moviesView.render(model.state.search.movies);
     }
   } catch (err) {
@@ -27,10 +31,10 @@ const controlMovies = async function () {
 };
 
 const init = function () {
-  // Load results on page without search
+  // Load results on page load
   controlMovies();
 
-  // Load results on page with search
+  // Load results on page from search
   searchView.addHandlerSearch(controlMovies);
 };
 
