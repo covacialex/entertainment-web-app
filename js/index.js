@@ -4,6 +4,7 @@ import * as model from "./model.js";
 import recommendedView from "./Views/recommendedView.js";
 import trendingView from "./Views/trendingView.js";
 import searchView from "./Views/searchView.js";
+import bookmarkView from "./Views/bookmarkView.js";
 
 const controlHome = async function () {
   try {
@@ -38,9 +39,20 @@ const controlHome = async function () {
   }
 };
 
+const controlBookmark = async function (name, status) {
+  const clickedMovie = model.state.recommended.find((el) => {
+    return el.title == name;
+  });
+
+  model.controlBookmark(clickedMovie, status);
+};
+
 const init = function () {
   // Load results on page load
   controlHome();
+
+  // Bookmark functionality
+  bookmarkView.addHandlerAddBookmark(controlBookmark);
 
   // Load results on page from search
   searchView.addHandlerSearch(controlHome);

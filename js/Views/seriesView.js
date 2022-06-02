@@ -12,14 +12,16 @@ class MoviesView extends View {
   _generateMarkupPreview(movie) {
     return `
     <li class="series__content__movie">
-    <div class="series__content__movie__main"  style="background-image: url('${
+    <div class="series__content__movie__main js__content"  style="background-image: url('${
       movie.thumbnail.regular.large
     }');">
-      <div class="series__content__movie__main__bookmark">
+      <div class="series__content__movie__main__bookmark js__bookmark">
         <img
-          src="assets/icon-bookmark-empty.svg"
+          src="assets/icon-bookmark-${
+            movie.isBookmarked ? "full" : "empty"
+          }.svg"
           alt=""
-          class="series__content__movie__bookmark__image"
+          class="series__content__movie__bookmark__image js__image"
         />
       </div>
     </div>
@@ -47,9 +49,7 @@ class MoviesView extends View {
         &bull;
         <p class="series__content__movie__contents__age">${movie.rating}</p>
       </div>
-      <h3 class="series__content__movie__contents__title">
-        ${movie.title}
-      </h3>
+      <h3 class="series__content__movie__contents__title">${movie.title}</h3>
     </div>
   </li>
       `;

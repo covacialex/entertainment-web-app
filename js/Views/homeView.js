@@ -17,7 +17,9 @@ class RecommendedView extends View {
     }');">
       <div class="recommended__content__movie__main__bookmark">
         <img
-          src="assets/icon-bookmark-empty.svg"
+          src="assets/icon-bookmark-${
+            movie.isBookmarked ? "full" : "empty"
+          }.svg"
           alt=""
           class="recommended__content__movie__bookmark__image"
         />

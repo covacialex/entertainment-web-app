@@ -1,11 +1,17 @@
 .sidenav {
   background-color: var(--color-neutral-dark);
+
+  border-radius: 1rem;
+  margin: 3.2rem 0 3.2rem 3.2rem;
+
+  width: 10rem;
+  height: 90vh;
+
   display: flex;
   justify-content: center;
-  border-radius: 1rem;
-  height: 100vh;
-  width: 10rem;
-  margin: 3.2rem 0 3.2rem 3.2rem;
+
+  position: sticky;
+  top: 5vh;
 
   &__links {
     display: flex;
@@ -62,13 +68,16 @@
 .search {
   display: flex;
   margin-top: 4rem;
-  transform: translateX(-3.2rem);
+
+  // Because I moved the search icon to the right
+  transform: translateX(-3rem);
 
   &__button {
     background-color: var(--color-secondary);
     border: none;
     cursor: pointer;
 
+    // Move search icon to include it inside focused outline
     transform: translateX(3.2rem);
     &__image {
     }
@@ -84,14 +93,6 @@
     font-weight: var(--font-weight-S);
     font-size: var(--font-size-head-M);
     color: #fff;
-
-    &:focus {
-      //   outline: none;
-    }
-
-    &::placeholder {
-      //   transform: translateY(0.2rem);
-    }
   }
 }
 
@@ -103,6 +104,13 @@
   margin-left: 3.6rem;
 
   width: 100vw;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  overflow: hidden;
 }
 
 .trending {
@@ -217,9 +225,9 @@
 
   &__content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 28rem);
-    // justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(min(24rem, 100%), 1fr));
     gap: 3.8rem;
+    margin-right: 3rem;
 
     &__movie {
       position: relative;
@@ -314,7 +322,7 @@
 
   &__content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 28rem);
+    grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
     // justify-content: center;
     gap: 3.8rem;
 
@@ -411,7 +419,7 @@
 
   &__content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 28rem);
+    grid-template-columns: repeat(auto-fill, minmax(min(24rem, 100%), 1fr));
     // justify-content: center;
     gap: 3.8rem;
 

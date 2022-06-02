@@ -1,6 +1,3 @@
-// Fetch method in case API is a link. Just import them in model.js
-
-/*
 export const API_URL = `../data.json`;
 const TIMEOUT_SEC = 10;
 
@@ -23,4 +20,3 @@ export const getJSON = async function (url) {
     console.error(err);
   }
 };
-*/

@@ -16,7 +16,9 @@ class TrendingView extends View {
       }');">>
             <div class="trending__content__movie__bookmark">
               <img
-                src="../assets/icon-bookmark-empty.svg"
+                src="../assets/icon-bookmark-${
+                  movie.isBookmarked ? "full" : "empty"
+                }.svg"
                 alt="Bookmark icon"
                 class="trending__content__movie__bookmark__image"
               />

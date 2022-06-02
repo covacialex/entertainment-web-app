@@ -30,9 +30,19 @@ const controlSeries = async function () {
   }
 };
 
+const controlBookmark = async function (name, status) {
+  const clickedMovie = model.state.series.find((el) => {
+    return el.title == name;
+  });
+
+  model.controlBookmark(clickedMovie, status);
+};
+
 const init = function () {
   // Load results on page load
   controlSeries();
+
+  seriesView.addHandlerAddBookmark(controlBookmark);
 
   // Load results on page from search
   searchView.addHandlerSearch(controlSeries);

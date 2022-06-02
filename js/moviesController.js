@@ -1,6 +1,7 @@
 "use strict";
 
 import * as model from "./model.js";
+import bookmarkView from "./Views/bookmarkView.js";
 import moviesView from "./Views/moviesView.js";
 import searchView from "./Views/searchView.js";
 
@@ -30,9 +31,20 @@ const controlMovies = async function () {
   }
 };
 
+const controlBookmark = async function (name, status) {
+  const clickedMovie = model.state.movies.find((el) => {
+    return el.title == name;
+  });
+
+  model.controlBookmark(clickedMovie, status);
+};
+
 const init = function () {
   // Load results on page load
   controlMovies();
+
+  // Bookmark functionality
+  moviesView.addHandlerAddBookmark(controlBookmark);
 
   // Load results on page from search
   searchView.addHandlerSearch(controlMovies);
