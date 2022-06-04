@@ -4,7 +4,7 @@
 
 My attempt at the challenge using the Model-View-Controller.
 
-[Live website.](https://covacialex.github.io/entertainment-web-app/index.html)
+[Live website.](https://scintillating-haupia-39e0b2.netlify.app/)
 
 #### Things I've learned.
 
