@@ -135,5 +135,3 @@ export const controlBookmark = async function (title, status) {
     );
   }
 };
-
-// sendJSON controlBookmark using PATCH method if there was an API?

@@ -23,6 +23,7 @@ const controlHome = async function () {
       recommendedView.addTitle("Recommended");
 
       trendingView.render(model.state.trending);
+      trendingView.carouselize();
       recommendedView.render(model.state.recommended);
     } else {
       // Clear trending section

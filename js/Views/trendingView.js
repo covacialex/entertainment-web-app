@@ -13,7 +13,7 @@ class TrendingView extends View {
     return `
       <li class="trending__content__movie" style="background-image: url('${
         movie.thumbnail.trending.large
-      }');">>
+      }')">
             <div class="trending__content__movie__bookmark">
               <img
                 src="../assets/icon-bookmark-${
@@ -55,6 +55,42 @@ class TrendingView extends View {
             </div>
           </li>
       `;
+  }
+
+  carouselize() {
+    const gap = 30;
+
+    const carousel = document.querySelector(".carousel");
+    const content = document.querySelector(".trending__content");
+    const next = document.querySelector(".next");
+    const prev = document.querySelector(".prev");
+
+    next.addEventListener("click", function (e) {
+      carousel.scrollBy(width + gap, 0);
+
+      if (carousel.scrollWidth !== 0) {
+        prev.style.display = "flex";
+      }
+
+      if (content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
+        next.style.display = "none";
+      }
+    });
+
+    prev.addEventListener("click", function (e) {
+      carousel.scrollBy(-(width + gap), 0);
+
+      if (carousel.scrollLeft - width - gap <= 0) {
+        prev.style.display = "none";
+      }
+
+      if (carousel.scrollWidth - width - gap <= carousel.scrollLeft + width) {
+        next.style.display = "flex";
+      }
+    });
+
+    let width = carousel.offsetWidth;
+    window.addEventListener("resize", (e) => (width = carousel.offsetWidth));
   }
 }
 
