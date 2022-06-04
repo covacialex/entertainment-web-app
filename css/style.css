@@ -299,7 +299,7 @@
 }
 .series__content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(24rem, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(24rem, auto));
   gap: 3.8rem;
 }
 .series__content__movie {
